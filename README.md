@@ -322,3 +322,45 @@ Lamento los inconvenientes y quedo atenta a cualquier observación.
 
 Saludos,
 Delia Acosta
+
+# **Clase 5**
+# **Ramas y GitFlow Básico**
+## **¿Que son las ramas?**
+
+Se puede decir que una rama es una bifurcación del código, es decir, una copia del estado actual desde un commit, que crea un nuevo camino para seguir trabajando sin afectar el original.
+
+Las ramas nos ayudan en bastantes cosas como trabajar en equipo sin conflicto, probar nuevas funciones sin afectar a las que ya excisten.
+
+## **¿Que es Git Branch?**
+Es un comando **"git branch"** que nos permite gestionar las ramas, es el comando principal para poder trabajar con ramas, de este nacen comandos como:
+
+**1. git branch.** Te permite hacer una lista de las ramas y muestra el estado actual del HEAD.
+
+**2. git branch < rama>.** Crea una rama desde la rama en la que estamos posicionados.
+
+**3. git branch -D < rama>.** Este nos permite borrar la rama.
+
+**GIT CHECKOUT enfocado en ramas**
+
+* **git checkout < rama>.** Este comando se ua para cambiar de rama, para usarlo no debemos tener nada en modified o staged.
+
+* **git checkout -b < rama>.** Este comando crea la rama y te mueve a el directamente.
+
+## **Checkout vs Switch**
+Para empezar Git switch se creo porque checkout estaba “sobrecargado” y podía causar errores.
+
+* **git checkout.** Nos sirve para demasiadas cosas (ramas, commits, archivos)
+* **git switch.** Solo sirve para ramas, por lo que es más seguro usarlo.
+
+## **GitFlow Básico**
+GitFlow nos ayuda a trabajar de manera ordenada nuestras ramas, versiones y permite la adaptacion para que se puedan unir a nuestro proyecto nuevos coperadores.
+## **¿Como funciona GitFlow?**
+* **Main.** El propósito de esta
+rama es contener el código
+que se encuentra en
+producción.
+* **develop.** Esta rama es la rama de "pre-producción”, esta contiene las caracteristicas que se estan probandos pero que aun no fueron validadas del todo.
+* **Ramas de apoyo.** Nos permitiran escribir codigo y pueden ser:
+* **Feature.** Se usan para nuevas caracteristicas en el proyecto, se crean desde develop y una vez que acabas se unen nuevamente para posteriormente ser eliminadas en develop.
+* **Release.** Usadas para la preparacion de una nueva version, son creadas en develop y se fucionan con develop o main.
+* **Hotfix.** Las uasamos para trabajar cambios, imprevistos o corregir fallos en producción. Se craean desde la rama main por que desde una rama develop no se puede dar solución, se fuciona con main o develop.
