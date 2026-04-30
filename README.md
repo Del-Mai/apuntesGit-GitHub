@@ -364,3 +364,67 @@ producción.
 * **Feature.** Se usan para nuevas caracteristicas en el proyecto, se crean desde develop y una vez que acabas se unen nuevamente para posteriormente ser eliminadas en develop.
 * **Release.** Usadas para la preparacion de una nueva version, son creadas en develop y se fucionan con develop o main.
 * **Hotfix.** Las uasamos para trabajar cambios, imprevistos o corregir fallos en producción. Se craean desde la rama main por que desde una rama develop no se puede dar solución, se fuciona con main o develop.
+
+# **Clase 6**
+## **¿Qué es git merge?**
+
+Nos permite unir dos ramas en una sola para que ambas tengan sus commits.
+
+ **1. Merge normal (fast forward).**
+* Une las ramas directamente.
+* No deja registro visual de que hubo una rama.
+* No sabes cuándo se hizo el merge.
+
+**2. Merge --no-ff**
+
+Usamos el comando **git merge --no-ff nombre_rama**
+* Mantiene el historial.
+* Crea un commit de merge, lo que nos deja un registro en el historial.
+* Nos permite ver que hubo una rama.
+* Es recomendable si se trabajara en equipo.
+## **¿Qué es git fetch?**
+Comando que nos permite ver si hay cambios en el repositorio remoto, solo ns deja ve si hay cambios no los trae.
+## **¿Qué es git pull?**
+Con el comando **git pull origin rama** traemos los cambios del repositorio remoto al local y actualiza la rama.
+## **¿Qué es git push?**
+**git push origin rama** Este nos permite subir los cambios del repo local (tu maquina) al repositorio remoto.
+* **Primer push**
+En caso de no ser nuestro repo usamos **git push -u origin rama** para crear la rama y no tener que solicitar permisos.
+## **Flujo de trabajo**
+* **Sin pull requests**
+
+git checkout develop
+
+git fetch
+
+git pull origin develop
+
+git checkout rama # Agregas -b *si estás creando la rama*
+
+git merge develop *Solo si hubo cambios en develop*
+
+*Trabajas en tu rama*
+
+git push origin rama # *Agregas -u si es la primera vez que subes cambios al repositorio remoto*
+
+git checkout develop
+
+git fetch
+
+git pull origin develop
+
+git merge –no-ff rama
+
+*Resuelves manualmente los archivos fallidos y sus conflictos*
+
+git add .
+
+git commit
+
+* **Con pull requests**
+
+La diferencia aca es que despues de todo ese flujo de trabajo, posteriormente de hacer el commit lo que debes hacer es:
+
+**git branch -D rama**
+
+**git push origin develop**
