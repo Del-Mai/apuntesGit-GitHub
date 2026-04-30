@@ -428,3 +428,5 @@ La diferencia aca es que despues de todo ese flujo de trabajo, posteriormente de
 **git branch -D rama**
 
 **git push origin develop**
+
+(Buenas noche auxi, para notificar el commit tardio se debe a que hoy me encontraba con 2 examenes y uno fue de noche por lo que no alcance a subirlo en hora, gracias por su comprension y una disculpa por los inconvenientes.)
