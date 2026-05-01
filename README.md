@@ -122,7 +122,7 @@ Realizamos esto cuando tenemos una funcion tan grande que no podemos describirla
 ## **GitHub y SSH**
 ## **¿Que es github?**
 GitHub es una plataforma en la nube que funciona como una red social para desarrolladores. Permite alojar, gestionar y colaborar en proyectos utilizando Git.
-## ** Git vs GitHub**
+## **Git vs GitHub**
 Git y Github no son lo mismo a pesar de que GitHub usa Git, Sus diferencias son:
 * **GitHub:**
 
@@ -481,3 +481,35 @@ Debemos definir cuantas personas aprueban el PR, es recomendable la mitad del eq
 Si alguien aprueba el PR y luego tú haces cambios nuevos, GitHub elimina la aprobación anterior. Esto evita que algun integrante obtenga aprobacion y luego cambie el codigo sin revision.
 * **Rechazo del pr**
 Basta con que una persona so oponga a los cambios para que se rechace y se tenga que revisar y arreglar los cambios para subirlo.
+# **Clase 8**
+## **Git stash**
+* El comando **git stash -m "mensaje"** ermite guardar temporalmente nuestros cambios en vez de hacer un commit, al hacerlo ya nos permite movernos de la rama en que estamos a cualquier otra.
+* **git stash list** Nos deja ver lalista de cambios guardados.
+* **git stash pop** Podemos traer nuestro cambios de regreso.
+## **Git diff**
+Este comando nos sirve para ver las diferencias en el codigo.
+* **git diff --staged** Para ver los cambios en Stage.
+* **git diff rama1 rama2** muestra las diferencias entre las ramas, lo eliminado y lo agregado.
+## **Problemas al mergear**
+Puede pasarnos que hacemos cambios de los archivo otra persona modifica el mismo archivo y aprueban primero su PR, en ese caso nuestro PR entra en conflicto, Git nos mostrara que hay **merge conflicts** y no te dejara hacer merge directamente.
+## **¿Como solucionamos esto?**
+Seguimos los siguientes pasos:
+
+1. Debemos ir a develop y hacer los comandos:
+
+**git checkout develop**
+
+**git fetch**
+
+**git pull origin develop**
+
+2. debemos volver a nuestra rama
+podemos usar: 
+**git switch tu-rama**
+
+**git checkout tu-rama**
+
+3. Traer cambios de develop
+
+Usamos **git merge develop**
+4. Resolver conflictos manualmente si es que hay, es necesario por que tu codigo ya no esta actualizado con respecto al repo.
