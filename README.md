@@ -430,3 +430,54 @@ La diferencia aca es que despues de todo ese flujo de trabajo, posteriormente de
 **git push origin develop**
 
 (Buenas noche auxi, para notificar el commit tardio se debe a que hoy me encontraba con 2 examenes y uno fue de noche por lo que no alcance a subirlo en hora, gracias por su comprension y una disculpa por los inconvenientes.)
+
+# **Clase 7**
+## **Pull Requests y trabajo en equipo**
+ **Problema del trabajo sin Pull Request:**
+
+* Dependemos demasiado del factor humano.
+* Cualquiera puede hacer merge sin revisión.
+* Puede haber errores, malas prácticas e incluso código malicioso.
+## **¿Qué es un Pull Request?**
+Un Pull Request es una solicitud para unir cambios de una rama a otra. Es como pedir permiso para poder subir nuestros cambios.
+ 
+ Y nos permite:
+* Revisar código antes de hacer merge.
+* Dar feedback.
+* Aprobar o rechazar cambios.
+* Evitar errores o problemas en el repositorio.
+# **Ventajas del Pull Request**
+* Nos permite ver los cambios realizados antes de unirlos a nuestra rama main o developer.
+* Aumenta la seguridad en tu proyecto.
+* Reduce errores humanos.
+* Nos obliga a trabajar realmente en equipo.
+# **Configuracion importantes**
+
+## **¿Donde hago mis configuarciones?**
+En GitHub seguimos los siguientes pasos:
+* Ir a tu repositorio.
+* Ir a Settings.
+* Entrar a Branches.
+* Crear una nueva regla.
+
+## **¿Para qué sirven estas reglas?**
+
+* Evita merges sin revisión.
+* Obligar el uso de Pull Request.
+* Controla quién puede aprobar o aceptar cambios.
+* Aumentar la seguridad del repositorio.
+
+## **¿Donde aplicamos?**
+ Aplicamos en las ramas **main** y **developer**
+## **Reglas**
+* **Regla principal**
+
+**Pull Request despues antes del merge**
+
+Esto para evitar errores y nos permita revisar si es que hay errores en nuestro codigo por que una vez mergeado se mezcla y si tiene errores ya afectamos al equipo.
+* **Aprobaciones**
+Debemos definir cuantas personas aprueban el PR, es recomendable la mitad del equipo mas uno, asi aseguramos que no solo una persona revise y desida todo y que el equipo revise y sea mas conciente de los cambios que se van a aceptar.
+* **Regla de seguridad**
+Si alguien aprueba el PR y luego tú haces cambios nuevos, GitHub elimina la aprobación anterior. Esto evita que algun integrante obtenga aprobacion y luego cambie el codigo sin revision.
+* **Rechazo del pr**
+Basta con que una persona so oponga a los cambios para que se rechace y se tenga que revisar y arreglar los cambios para subirlo.
